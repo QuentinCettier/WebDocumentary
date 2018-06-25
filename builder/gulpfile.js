@@ -103,6 +103,7 @@ gulp.task('build-pages', function ()
     return gulp.src('./../sources/pages/*.html')
         .pipe(gulp.dest('./../dist/pages/'))
 })
+
 gulp.task('build-index', function ()
 {
     return gulp.src('./../sources/index.html')
@@ -125,14 +126,23 @@ gulp.task( 'build-styles', function()
         .pipe( gulp_cssnano() )
         .pipe( gulp.dest( '../dist/assets/stylesheet' ) )
 } )
-
+gulp.task('build-images', function ()
+{
+    return gulp.src('./../sources/assets/images/*.png')
+        .pipe(gulp.dest('./../dist/assets/images'))
+})
+gulp.task('build-fonts', function ()
+{
+    return gulp.src(['./../sources/assets/fonts/*.ttf','./../sources/assets/fonts/*.ttc'])
+        .pipe(gulp.dest('./../dist/assets/fonts'))
+})
 gulp.task( 'remove-maps', function()
 {
     return gulp.src( [ '../dist/assets/javascript/bundle.js.map', '../dist/assets/stylesheet/main.css.map' ] )
         .pipe( gulp_clean( { force: true, read: false } ) )
 } )
 
-gulp.task( 'build', [ 'build-index', 'build-pages', 'build-scripts', 'build-styles', 'remove-maps' ], function()
+gulp.task( 'build', [ 'build-index', 'build-pages', 'build-scripts', 'build-styles', 'remove-maps', 'build-images','build-fonts'], function()
 {
     return gulp.src( './' )
         .pipe( gulp_notify( {

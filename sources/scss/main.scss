@@ -1,22 +1,27 @@
 @import 'components/reset';
 @import 'components/variables';
+@import 'components/fonts';
 @import 'components/mixins';
 
 @import 'partials/menu.scss';
 @import 'partials/home.scss';
 body
 {
-    background: $red;
     overflow: hidden;
 }
-.point
+.CTA_menu
 {
-    width: 5px;
-    height: 5px;
-    background: white;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 10%;
+    right: 5%;
+    z-index: 3;
+    color : white;
+    font-family: RalewayBold;
+    font-size: 24px;
     transform: translate(-50%, -50%);
+    &:hover
+    {
+        cursor: pointer;
+    }
 }
 

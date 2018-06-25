@@ -1,4 +1,93 @@
 .home-container
 {
     @include center();
+    .home-container_image
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        
+    }
+    .home_image
+    {
+        top: 0%;
+    }
+    .title-container__title-1
+    {
+        position: absolute;
+        width: 43%;
+        height: 12%;
+        top : 25%;
+        left: 25%;
+        font-family: RalewayBold;
+        font-size: 100px;
+        color: white;
+        overflow: hidden;
+    }
+    .title-container__title-2
+    {
+        position: absolute;
+        width: 48%;
+        height: 12%;
+        top : 40%;
+        left: 45%;
+        font-family: RalewayBold;
+        font-size: 100px;
+        color: white;
+        overflow: hidden;
+    }
+}
+
+.callToScroll-container__text
+{
+    position: absolute;
+    color: white;
+    left:50%;
+    transform: translateX(-50%);
+    bottom : 5%;
+    font-family: RalewayBold;
+    font-size: 14px;
+}
+.callToScroll-container__line__container
+{
+    overflow: hidden;
+    position: absolute;
+    width:2px;
+    height: 5%;
+    bottom: 8%;
+    left:50%;
+    transform: translateX(-50%);
+}
+.callToScroll-container__line
+{
+    position: absolute;
+    width:2px;
+    height: 100%;
+    background: white;
+    bottom: 8%;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+
+.home-intro-container
+{
+    position: absolute;
+    overflow: hidden;
+    width: 40%;
+    height: 8%;
+    bottom: 20%;
+    color: white;
+    left:50%;
+    font-family: HelveticaNeue;
+    text-align: center;
+    line-height: 36px;
+    font-size: 24px;
+    transform: translateX(-50%);
+}
+
+
+.slider_image
+{
+    top:100%;
 }
