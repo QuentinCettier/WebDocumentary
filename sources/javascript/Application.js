@@ -5,8 +5,9 @@ class Application
      */
     constructor( options )
     {
-        alert( 'It\'s alive' )
+        console.log('salut mdr')
     }
+
 }
 
 export default Application
