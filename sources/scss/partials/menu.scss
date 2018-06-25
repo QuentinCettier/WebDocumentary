@@ -1,0 +1,112 @@
+.menu
+{
+    @include center();
+    background: black;
+    opacity: 0;
+    .menu-section
+    {
+        position: absolute;
+        height: 100%;
+        width: 20%;
+        top:0%;
+        &:hover
+        {
+            cursor: pointer;
+            background: red;
+        }
+        .menu-section__title
+        {
+            position: absolute;
+            height: 10%;
+            top : 50%;
+            left: 50%;
+            transform: translate(-75%, -50%);
+            color: white;
+            text-align: center;
+        }
+    }
+    .section-1
+    {
+        left:0%;
+        
+    }
+    .section-2
+    {
+        left:20%;
+        
+    }
+    .section-3
+    {
+        left:40%;
+        
+    }
+    .section-4
+    {
+        left:60%;
+        
+    }
+    .section-5
+    {
+        left:80%;
+    }
+}
+
+.line-container-1,
+.line-container-2,
+.line-container-3,
+.line-container-4
+{
+    position: absolute;
+    top:0%;
+    height: 100%;
+    width: .5%;
+    .line-container__line-1{top: 0%}
+    .line-container__line-2{top: 3%}
+    .line-container__line-3{top: 6%}
+    .line-container__line-4{top: 9%}
+    .line-container__line-5{top: 12%}
+    .line-container__line-6{top: 15%}
+    .line-container__line-7{top: 18%}
+    .line-container__line-8{top: 21%}
+    .line-container__line-9{top: 24%}
+    .line-container__line-10{top: 27%}
+    .line-container__line-11{top: 30%}
+    .line-container__line-12{top: 33%}
+    .line-container__line-13{top: 36%}
+    .line-container__line-14{top: 39%}
+    .line-container__line-15{top: 42%}
+    .line-container__line-16{top: 45%}
+    .line-container__line-17{top: 48%}
+    .line-container__line-18{top: 51%}
+    .line-container__line-19{top: 54%}
+    .line-container__line-20{top: 57%}
+    .line-container__line-21{top: 60%}
+    .line-container__line-22{top: 63%}
+    .line-container__line-23{top: 66%}
+    .line-container__line-24{top: 69%}
+    .line-container__line-25{top: 72%}
+    .line-container__line-26{top: 75%}
+    .line-container__line-27{top: 78%}
+    .line-container__line-28{top: 81%}
+    .line-container__line-29{top: 84%}
+    .line-container__line-30{top: 87%}
+    .line-container__line-31{top: 90%}
+    .line-container__line-32{top: 93%}
+    .line-container__line-33{top: 96%}
+    .line-container__line-34{top: 99%}
+    
+}
+
+.line-container-1 { left: 20%; }
+.line-container-2 { left: 40%; }
+.line-container-3 { left: 60%; }
+.line-container-4 { left: 80%; }   
+
+
+.line-container__line
+{
+    position: absolute;
+    width: 50%;
+    height: 2%;
+    background: rgba(58, 58, 58, 0.5);
+}

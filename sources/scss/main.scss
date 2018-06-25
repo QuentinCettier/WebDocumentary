@@ -1,8 +1,14 @@
+@import 'components/reset';
+@import 'components/variables';
+@import 'components/mixins';
+
+@import 'partials/menu.scss';
+@import 'partials/home.scss';
 body
 {
-    background: red;
+    background: $red;
+    overflow: hidden;
 }
-    
 .point
 {
     width: 5px;
@@ -13,3 +19,4 @@ body
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
