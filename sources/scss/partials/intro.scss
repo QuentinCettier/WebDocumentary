@@ -83,7 +83,6 @@
     left: 50%;
     width: 60%;
     transform: translate(-50%, -50%);
-    overflow: hidden;
     font-family: HelveticaNeueLight;
     
     .intro_2_container__text-container__text
@@ -102,4 +101,45 @@
 .gold
 {
     color: $gold;
+}
+
+
+.plus-intro-part
+{
+
+    position: absolute;
+    width: 55%;
+    height: 100%;
+    top: 0%;
+    left: 100%;
+    background :$green;
+    .plus-intro-part__text-container
+    {
+        position: absolute;
+        width: 40%;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $white;
+        .plus-intro-part__text-container__titre-1,
+        .plus-intro-part__text-container__titre-2,
+        .plus-intro-part__text-container__titre-3
+        {
+            font-family: RalewaySemiBold;
+            font-size: 16px;
+            letter-spacing: .6px;
+            line-height: 24px;
+        }
+        .plus-intro-part__text-container__text-1,
+        .plus-intro-part__text-container__text-2,
+        .plus-intro-part__text-container__text-3
+        {
+            font-family: HelveticaNeueLight;
+            font-size: 14px;
+            letter-spacing: .6px;
+            line-height: 24px;
+            margin-bottom: 15%;
+        }
+    }
+
 }

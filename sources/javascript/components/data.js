@@ -16,6 +16,12 @@ export const data =
         'id' : 2,
         'title' : 'Introduction - The Big Problem',
         'text' : 'As economic and environmental crises hit urban areas hard, effective treatment of urbanization problems has become a global priority today.',
+        'img': './assets/images/Slider_4.png',
+    },
+    {
+        'id' : 3,
+        'title' : 'Introduction - Fundamentals of a Smart City',
+        'text' : 'The Smart City consists of a living space that is optimizing the costs, the organization and the well-being of its inhabitants.',
         'img': './assets/images/Slider_3.png',
     }
 ]

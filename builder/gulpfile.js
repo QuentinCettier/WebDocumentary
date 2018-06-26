@@ -128,7 +128,7 @@ gulp.task( 'build-styles', function()
 } )
 gulp.task('build-images', function ()
 {
-    return gulp.src('./../sources/assets/images/*.png')
+    return gulp.src(['./../sources/assets/images/*.png','./../sources/assets/images/*.jpg'])
         .pipe(gulp.dest('./../dist/assets/images'))
 })
 gulp.task('build-fonts', function ()

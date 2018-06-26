@@ -45,3 +45,33 @@ body
     }
 }
 
+.plus-icon
+{
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border: 2px solid white;
+    border-radius: 100%;
+    bottom : 5%;
+    right: 6.5%;
+    .plus-icon__line-1
+    {
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        background: white;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .plus-icon__line-2
+    {
+        position: absolute;
+        width: 2px;
+        height: 30px;
+        background: white;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
