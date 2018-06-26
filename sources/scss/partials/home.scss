@@ -47,6 +47,7 @@
     bottom : 5%;
     font-family: RalewayBold;
     font-size: 14px;
+    z-index: 1;
 }
 .callToScroll-container__line__container
 {
@@ -87,7 +88,17 @@
 }
 
 
-.slider_image
+.slider_image_1
 {
     top:100%;
+}
+
+.slider_image_2,
+{
+    top: 100%;
+}
+
+.slider_image_3
+{
+    top: 100%;
 }

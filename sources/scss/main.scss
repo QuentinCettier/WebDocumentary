@@ -5,6 +5,8 @@
 
 @import 'partials/menu.scss';
 @import 'partials/home.scss';
+@import 'partials/intro.scss';
+
 body
 {
     overflow: hidden;
@@ -19,6 +21,24 @@ body
     font-family: RalewayBold;
     font-size: 24px;
     transform: translate(-50%, -50%);
+    &:hover
+    {
+        cursor: pointer;
+    }
+}
+
+.calltoAction_click-container
+{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    z-index: 3;
+    color : white;
+    font-family: RalewayBold;
+    font-size: 24px;
+    transform: translateX(-50%);
     &:hover
     {
         cursor: pointer;

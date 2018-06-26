@@ -1,0 +1,105 @@
+.intro-section__global-container
+{
+    position: absolute;
+    width: 40%;
+    height: 35%;
+    top : 55%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: white;
+    .intro-section__title-container
+    {
+        overflow: hidden;
+        height: 10%;
+        .intro-section__title-container__title
+        {
+            font-family: RalewayLight;
+            font-size: 24px;
+            letter-spacing: .4px;
+            margin-bottom: 10px;
+        }
+    }
+    .intro-section__text-container
+    {
+        overflow: hidden;
+        height: 90%;
+        .intro-section__text-container__text
+        {
+            font-family: RalewaySemiBold;
+            font-size: 54px;
+            letter-spacing: 2.8px;
+            line-height: 64px;
+        }
+    }
+}
+
+.intro-slide__controller-container
+{
+    opacity: 0;
+    position: absolute;
+    color: white;
+    right: 6.5%;
+    top: 38%;
+    width: 2%;
+    .intro-slide__slide
+    {
+        opacity: 0;
+        display: block;
+        width: 100%;
+        height: 20%;
+        font-family: RalewayBold;
+        font-size: 18px;
+        margin-bottom: 45px;
+    }
+    .current_slide_indicator
+    {
+        opacity: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        border: 2px solid white;
+        z-index: 1;
+        position: absolute;
+        left: -17px;
+        top: -10px;
+    }
+}
+
+.intro_2_container
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background : white;
+    left: 100%;
+    // transform: translateX(-100%);
+}
+
+.intro_2_container__text-container
+{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    font-family: HelveticaNeueLight;
+    
+    .intro_2_container__text-container__text
+    {
+        font-size: 36px;
+        letter-spacing: .45px;
+        line-height: 45px;
+        text-align: center;
+    }
+}
+
+.blue
+{
+    color: $blue;
+}
+.gold
+{
+    color: $gold;
+}
