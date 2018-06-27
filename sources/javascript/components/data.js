@@ -20,6 +20,12 @@ export const data =
     },
     {
         'id' : 3,
+        'title' : 'Introduction - The Big Problem',
+        'text' : 'Smart City seeks to reconcile social, cultural and environmental pillars to meet the needs of institutions, businesses and citizens.',
+        'img': './assets/images/Slider_3.png',
+    },
+    {
+        'id' : 4,
         'title' : 'Introduction - Fundamentals of a Smart City',
         'text' : 'The Smart City consists of a living space that is optimizing the costs, the organization and the well-being of its inhabitants.',
         'img': './assets/images/Slider_3.png',

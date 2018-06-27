@@ -122,7 +122,7 @@ CTA_menu.addEventListener('click', () =>
         tl
             .to($menu, .3, {autoAlpha: 1, zIndex: 2, ease: Power1.easeIn})
             .staggerFromTo([menu_section_1,menu_section_2,menu_section_3,menu_section_4,menu_section_5,menu_section_6],
-            6,
+            .6,
             {autoAlpha: 0, yPercent: 100}, 
             {autoAlpha : 1, yPercent: 0, ease:Power0.easeIn},
             .1
@@ -154,7 +154,12 @@ CTA_menu.addEventListener('click', () =>
  * Menu Click on elements
  */
 
-
+menu_section_1.addEventListener('click', () =>
+{
+    const tl = new TimelineLite()
+    tl
+        .to(menu_section_1, .5, {scaleX : 2})
+})
 
 
 
@@ -208,6 +213,17 @@ callToScrollContainer__text.addEventListener('click', () =>
             .to(intro_section__title_container__title, .5, {yPercent: -150, ease: Power1.easeIn})
             .to(intro_section__text_container__text, .7, {yPercent: -130, ease: Power1.easeIn}, '-=.5')
     }
+    else if(countScroll == 3)
+    {
+        countScroll ++
+        currentSlide = 2
+        nextSlide = currentSlide + 1
+        const tlSlide1Out = new TimelineMax({onComplete: switchSlide, onCompleteParams : [nextSlide, currentSlide]})
+        tlSlide1Out
+            .to(calltoAction_click_container, .3, {autoAlpha: 0, visibility: 'hidden'})
+            .to(intro_section__title_container__title, .5, {yPercent: -150, ease: Power1.easeIn})
+            .to(intro_section__text_container__text, .7, {yPercent: -130, ease: Power1.easeIn}, '-=.5')
+    }
 
 })
 
@@ -235,6 +251,16 @@ const switchSlide = (nextSlide, currentSlide) =>
                 .fromTo(slider_image_1, 1, {yPercent: -100},{yPercent: -200, ease: Expo.easeInOut}, '-= .3')
                 .fromTo(slider_image_3,1, {yPercent: 0},{yPercent: -100, ease: Expo.easeInOut},'-=1')
                 .to(current_slide_indicator, .4, {yPercent: 280})
+                .to(callToScroll_container, .3, {autoAlpha: 1})
+                
+        }
+        else if(nextSlide == 3)
+        {
+            intro_section__global_container.style.width = '65%'
+            const tlSlider = new TimelineLite()
+                .fromTo(slider_image_1, 1, {yPercent: -100},{yPercent: -200, ease: Expo.easeInOut}, '-= .3')
+                .fromTo(slider_image_4,1, {yPercent: 0},{yPercent: -100, ease: Expo.easeInOut},'-=1')
+                .to(current_slide_indicator, .4, {yPercent: 420})
                 .to(callToScroll_container, .3, {autoAlpha: 0})
                 .to(calltoAction_click_container, .3, {autoAlpha: 1, visibility: 'visible'}, '+=.8')
         }
@@ -257,14 +283,24 @@ const switchSlide = (nextSlide, currentSlide) =>
                 .fromTo(slider_image_2, 1, {yPercent: -100},{yPercent: -200, ease: Expo.easeInOut}, '-= .3')
                 .fromTo(slider_image_3,1,{yPercent: 0}, {yPercent: -100, ease: Expo.easeInOut},'-=1')
                 .to(current_slide_indicator, .4, {yPercent: 280})
-                .to(callToScroll_container, .3, {autoAlpha: 0})
+                .to(callToScroll_container, .3, {autoAlpha: 1})
                 .to(calltoAction_click_container, .3, {autoAlpha: 0})
-                .to(calltoAction_click_container, .3, {autoAlpha: 1, visibility: 'visible'}, '+=.8')
                 
+        }
+        else if(nextSlide == 3)
+        {
+            intro_section__global_container.style.width = '65%'
+            const tlSlider = new TimelineLite()
+                .fromTo(slider_image_2, 1, {yPercent: -100},{yPercent: -200, ease: Expo.easeInOut}, '-= .3')
+                .fromTo(slider_image_4,1, {yPercent: 0},{yPercent: -100, ease: Expo.easeInOut},'-=1')
+                .to(current_slide_indicator, .4, {yPercent: 420})
+                .to(callToScroll_container, .3, {autoAlpha: 0})
+                .to(calltoAction_click_container, .3, {autoAlpha: 1, visibility: 'visible'}, '+=.8')
         }
     }
     else if(currentSlide == 2)
     {
+        
         if(nextSlide == 0)
         {
             intro_section__global_container.style.width = '40%'
@@ -283,6 +319,48 @@ const switchSlide = (nextSlide, currentSlide) =>
                 .to(current_slide_indicator, .4, {yPercent: 140})
                 .to(callToScroll_container, .3, {autoAlpha: 1})
         }
+        else if(nextSlide == 3)
+        {
+            intro_section__global_container.style.width = '65%'
+            const tlSlider = new TimelineLite()
+                .fromTo(slider_image_3, 1, {yPercent: -100},{yPercent: -200, ease: Expo.easeInOut}, '-= .3')
+                .fromTo(slider_image_4,1, {yPercent: 0},{yPercent: -100, ease: Expo.easeInOut},'-=1')
+                .to(current_slide_indicator, .4, {yPercent: 420})
+                .to(callToScroll_container, .3, {autoAlpha: 0})
+                .to(calltoAction_click_container, .3, {autoAlpha: 1, visibility: 'visible'}, '+=.8')
+        }
+    }
+    else if(currentSlide == 3)
+    {
+        TweenLite.to(calltoAction_click_container, .3, {autoAlpha: 0, visibility: 'hidden'})
+        if(nextSlide == 0)
+        {
+            intro_section__global_container.style.width = '40%'
+            const tlSlider = new TimelineLite()
+                .fromTo(slider_image_4, 1, {yPercent: -100},{yPercent: -200, ease: Expo.easeInOut}, '-= .3')
+                .fromTo(slider_image_1,1, {yPercent: 0},{yPercent: -100, ease: Expo.easeInOut},'-=1')
+                .to(current_slide_indicator, .4, {yPercent: 0})
+                .to(callToScroll_container, .3, {autoAlpha: 1})
+        }
+        else if(nextSlide == 1)
+        {
+            intro_section__global_container.style.width = '50%'
+            const tlSlider = new TimelineLite()
+                .fromTo(slider_image_4, 1, {yPercent: -100},{yPercent: -200, ease: Expo.easeInOut}, '-= .3')
+                .fromTo(slider_image_2,1, {yPercent: 0},{yPercent: -100, ease: Expo.easeInOut},'-=1')
+                .to(current_slide_indicator, .4, {yPercent: 140})
+                .to(callToScroll_container, .3, {autoAlpha: 1})
+        }
+        else if(nextSlide == 2)
+        {
+            intro_section__global_container.style.width = '65%'
+            const tlSlider = new TimelineLite()
+                .fromTo(slider_image_4, 1, {yPercent: -100},{yPercent: -200, ease: Expo.easeInOut}, '-= .3')
+                .fromTo(slider_image_3,1, {yPercent: 0},{yPercent: -100, ease: Expo.easeInOut},'-=1')
+                .to(current_slide_indicator, .4, {yPercent: 280})
+                .to(callToScroll_container, .3, {autoAlpha: 1})
+        }
+        
     }
 
     const tlfadeInIntro = new TimelineLite()
@@ -299,14 +377,12 @@ intro_slide__slide_3.addEventListener('click', () =>
 {
 
     nextSlide = 2
-    console.log(currentSlide)
-    console.log(nextSlide)
     const tlSlide1Out = new TimelineMax({onComplete: switchSlide, onCompleteParams : [nextSlide, currentSlide]})
     tlSlide1Out
         .to(intro_section__title_container__title, .5, {yPercent: -150, ease: Power1.easeIn})
         .to(intro_section__text_container__text, .7, {yPercent: -130, ease: Power1.easeIn}, '-=.5')  
         .to(current_slide_indicator, .8, {yPercent: 280})
-        .to(callToScroll_container, .3, {autoAlpha: 0})
+        .to(callToScroll_container, .3, {autoAlpha: 1})
         
     currentSlide = 2
 
@@ -317,8 +393,7 @@ intro_slide__slide_2.addEventListener('click', () =>
 {
 
     nextSlide = 1
-    console.log(currentSlide)
-    console.log(nextSlide)
+    
     const tlSlide1Out = new TimelineMax({onComplete: switchSlide, onCompleteParams : [nextSlide, currentSlide]})
     tlSlide1Out
         .to(calltoAction_click_container, .3, {autoAlpha: 0, visibility: 'hidden'})
@@ -331,10 +406,8 @@ intro_slide__slide_2.addEventListener('click', () =>
 
 intro_slide__slide_1.addEventListener('click', () =>
 {
-    console.log('mdr')
+    
     nextSlide = 0
-    console.log(currentSlide)
-    console.log(nextSlide)
     const tlSlide1Out = new TimelineMax({onComplete: switchSlide, onCompleteParams : [nextSlide, currentSlide]})
     tlSlide1Out
         .to(calltoAction_click_container, .3, {autoAlpha: 0, visibility: 'hidden'})
@@ -346,55 +419,79 @@ intro_slide__slide_1.addEventListener('click', () =>
     currentSlide = 0
 })
 
+intro_slide__slide_4.addEventListener('click', () =>
+{
+    console.log('mdr')
+    nextSlide = 3
+    console.log(currentSlide)
+    console.log(nextSlide)
+    const tlSlide1Out = new TimelineMax({onComplete: switchSlide, onCompleteParams : [nextSlide, currentSlide]})
+    tlSlide1Out
+        .to(calltoAction_click_container, .3, {autoAlpha: 0, visibility: 'hidden'})
+        .to(intro_section__title_container__title, .25, {yPercent: -150, ease: Power1.easeIn})
+        .to(intro_section__text_container__text, .5, {yPercent: -130, ease: Power1.easeIn}, '-=.25')  
+        .to(current_slide_indicator, .8, {yPercent: 420})
+        .to(callToScroll_container, .3, {autoAlpha: 0})
+        
+
+    currentSlide = 3
+})
+
+
 let click_count = 0
 calltoAction_click_container.addEventListener('click', () =>
 {
-    if(click_count == 0)
-    {
-        const tl = new TimelineLite()
-        .to(calltoAction_click_container, .1, {autoAlpha:0})
-        .set([CTA_menu, calltoAction_click_container], {color: '#000'})
-        .to(intro_section__title_container__title, .25, {xPercent: -150, ease: Power1.easeIn})
-        .to(intro_section__text_container__text, .5, {xPercent: -130, ease: Power1.easeIn}, '-=.25')  
-        .to(slider_image_3, 1.5, {xPercent: -100, ease:Expo.easeInOut},'-=.5')
-        .to(intro_2_container, 1.5, {xPercent: -100, ease:Expo.easeInOut},'-=1.5')
-        .to(intro_2_text_1, .8, {visibility: 'visible', autoAlpha : 1 , yPercent: 0 ,ease: Power1.easeIn})
-        .to(intro_2_text_1, .8, {autoAlpha : 0}, '+=1')
-        .to(intro_2_text_2, .8, {visibility: 'visible', autoAlpha : 1 , yPercent: 0 ,ease: Power1.easeIn})
-        .to(intro_2_text_2, .8, {autoAlpha : 0}, '+=1')
-        .to(intro_2_text_3, .8, {visibility: 'visible', autoAlpha : 1 , yPercent: 0 ,ease: Power1.easeIn})
-        .to(intro_2_text_3, .8, {autoAlpha : 0}, '+=1')
-        .set(intro_slide__controller_container, {visibility: 'hidden', autoAlpha: 0})
-        .set(intro_2_text_2, {xPercent: 20, yPercent: -40})
-        .set(intro_2_text_1, {xPercent: -20, yPercent: -100})
-        .set(intro_2_text_3, {xPercent: -20, yPercent: 40})
-        .to(intro_2_text_2, .8, {autoAlpha : 1 ,ease: Power1.easeIn}, '+=1')
-        .to(intro_2_text_1, .8, {autoAlpha : 1 ,ease: Power1.easeIn}, '-=.4')
-        .to(intro_2_text_3, .8, {autoAlpha : 1 ,ease: Power1.easeIn}, '-=.4')
-        .to(calltoAction_click_container, .3, {autoAlpha:1, ease: Power1.easeIn})
-        
-        click_count++
-    }
-    else if(click_count == 1)
-    {
-        intro_section__title_container__title.innerHTML = data[3].title
-        intro_section__text_container__text.innerHTML = data[3].text
-        intro_section__global_container.style.width = '60%'
-        const tl_1 = new TimelineLite()
-        tl_1
-            .to(intro_2_text_2, .8, {autoAlpha : 0})
-            .to(intro_2_text_3, .8, {autoAlpha : 0}, '-=.4')
-            .to(intro_2_text_1, .8, {autoAlpha : 0}, '-=.4')
-            .set([CTA_menu, calltoAction_click_container], {color: '#fff'})
-            .to(plus_icon, .3, {autoAlpha: 1, ease: Power0.easeIn})
-            .fromTo(intro_2_container, 1, {yPercent: -100},{yPercent: -200, ease: Expo.easeInOut}, '-= .3')
-            .fromTo(slider_image_4,1, {yPercent: 0},{yPercent: -100, ease: Expo.easeInOut},'-=1')
-            .set([intro_section__text_container__text, intro_section__title_container__title], {xPercent: 0})
-            .fromTo(intro_section__text_container__text, 2.5,{yPercent: 150}, {yPercent: 0, ease:Expo.easeInOut})
-            .fromTo(intro_section__title_container__title, 1.4, {yPercent: 150},{yPercent: 0, ease:Expo.easeInOut}, '-=1.5')
-    }
-    
+    TweenLite.to(calltoAction_click_container, .3, {autoAlpha: 0, visibility: 'hidden'})
+    CTA_menu.click()
 })
+// calltoAction_click_container.addEventListener('click', () =>
+// {
+//     if(click_count == 0)
+//     {
+//         const tl = new TimelineLite()
+//         .to(calltoAction_click_container, .1, {autoAlpha:0})
+//         .set([CTA_menu, calltoAction_click_container], {color: '#000'})
+//         .to(intro_section__title_container__title, .25, {xPercent: -150, ease: Power1.easeIn})
+//         .to(intro_section__text_container__text, .5, {xPercent: -130, ease: Power1.easeIn}, '-=.25')  
+//         .to(slider_image_3, 1.5, {xPercent: -100, ease:Expo.easeInOut},'-=.5')
+//         .to(intro_2_container, 1.5, {xPercent: -100, ease:Expo.easeInOut},'-=1.5')
+//         .to(intro_2_text_1, .8, {visibility: 'visible', autoAlpha : 1 , yPercent: 0 ,ease: Power1.easeIn})
+//         .to(intro_2_text_1, .8, {autoAlpha : 0}, '+=1')
+//         .to(intro_2_text_2, .8, {visibility: 'visible', autoAlpha : 1 , yPercent: 0 ,ease: Power1.easeIn})
+//         .to(intro_2_text_2, .8, {autoAlpha : 0}, '+=1')
+//         .to(intro_2_text_3, .8, {visibility: 'visible', autoAlpha : 1 , yPercent: 0 ,ease: Power1.easeIn})
+//         .to(intro_2_text_3, .8, {autoAlpha : 0}, '+=1')
+//         .set(intro_slide__controller_container, {visibility: 'hidden', autoAlpha: 0})
+//         .set(intro_2_text_2, {xPercent: 20, yPercent: -40})
+//         .set(intro_2_text_1, {xPercent: -20, yPercent: -100})
+//         .set(intro_2_text_3, {xPercent: -20, yPercent: 40})
+//         .to(intro_2_text_2, .8, {autoAlpha : 1 ,ease: Power1.easeIn}, '+=1')
+//         .to(intro_2_text_1, .8, {autoAlpha : 1 ,ease: Power1.easeIn}, '-=.4')
+//         .to(intro_2_text_3, .8, {autoAlpha : 1 ,ease: Power1.easeIn}, '-=.4')
+//         .to(calltoAction_click_container, .3, {autoAlpha:1, ease: Power1.easeIn})
+        
+//         click_count++
+//     }
+//     else if(click_count == 1)
+//     {
+//         intro_section__title_container__title.innerHTML = data[3].title
+//         intro_section__text_container__text.innerHTML = data[3].text
+//         intro_section__global_container.style.width = '60%'
+//         const tl_1 = new TimelineLite()
+//         tl_1
+//             .to(intro_2_text_2, .8, {autoAlpha : 0})
+//             .to(intro_2_text_3, .8, {autoAlpha : 0}, '-=.4')
+//             .to(intro_2_text_1, .8, {autoAlpha : 0}, '-=.4')
+//             .set([CTA_menu, calltoAction_click_container], {color: '#fff'})
+//             .to(plus_icon, .3, {autoAlpha: 1, ease: Power0.easeIn})
+//             .fromTo(intro_2_container, 1, {yPercent: -100},{yPercent: -200, ease: Expo.easeInOut}, '-= .3')
+//             .fromTo(slider_image_4,1, {yPercent: 0},{yPercent: -100, ease: Expo.easeInOut},'-=1')
+//             .set([intro_section__text_container__text, intro_section__title_container__title], {xPercent: 0})
+//             .fromTo(intro_section__text_container__text, 2.5,{yPercent: 150}, {yPercent: 0, ease:Expo.easeInOut})
+//             .fromTo(intro_section__title_container__title, 1.4, {yPercent: 150},{yPercent: 0, ease:Expo.easeInOut}, '-=1.5')
+//     }
+    
+// })
 let open = true
 plus_icon.addEventListener('click', () =>
 {
@@ -424,3 +521,4 @@ plus_icon.addEventListener('click', () =>
     }
     
 })
+
