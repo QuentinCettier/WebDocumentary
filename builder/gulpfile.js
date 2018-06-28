@@ -16,6 +16,8 @@ let gulp         = require( 'gulp' ),
     watchify     = require( 'watchify' ),
     browserSync  = require( 'browser-sync' ).create()
 
+    const image = require('gulp-image');
+
 /**
  * Params
  */
@@ -38,6 +40,75 @@ const bundle = function()
         .pipe( gulp_notify( { title: 'Gulp: scripts', message: 'success' } ) )
 }
 
+const bundleSufficient = function()
+{
+    bundler.bundle()
+        .on( 'error', gulp_notify.onError( { title: 'Gulp: scripts' } ) )
+        .pipe( source( 'bundle-sufficient.js') )
+        .pipe( buffer() )
+        .pipe( sourcemaps.init( { loadMaps: true } ) )
+        .pipe( sourcemaps.write( './' ) )
+        .pipe( gulp.dest( '../dist/assets/javascript' ) )
+        .pipe( browserSync.stream() )
+        .pipe( gulp_notify( { title: 'Gulp: scripts', message: 'success lotr bundle' } ) )
+}
+
+const bundleCollaborative = function()
+{
+    bundler.bundle()
+        .on( 'error', gulp_notify.onError( { title: 'Gulp: scripts' } ) )
+        .pipe( source( 'bundle-collaborative.js') )
+        .pipe( buffer() )
+        .pipe( sourcemaps.init( { loadMaps: true } ) )
+        .pipe( sourcemaps.write( './' ) )
+        .pipe( gulp.dest( '../dist/assets/javascript' ) )
+        .pipe( browserSync.stream() )
+        .pipe( gulp_notify( { title: 'Gulp: scripts', message: 'success lotr bundle' } ) )
+}
+
+gulp.task( 'scripts-collaborative', function()
+{
+    // Create bundler
+    bundler = browserify( {
+            cache       : {},
+            packageCache: {},
+            entries     : '../sources/javascript/collaborative.js',
+            debug       : true,
+            paths       : [ './node_modules', '../sources/javascript/collaborative.js','../sources/javascript/components']
+        } )
+        .transform( 'babelify', { presets: [ 'babel-preset-es2015' ].map( require.resolve ) } )
+
+    // Watch
+    bundler.plugin( watchify )
+
+    // Listen to bundler update
+    bundler.on( 'update', bundleCollaborative )  
+
+    // Bundle
+    bundleCollaborative()
+})
+
+gulp.task( 'scripts-sufficient', function()
+{
+    // Create bundler
+    bundler = browserify( {
+            cache       : {},
+            packageCache: {},
+            entries     : '../sources/javascript/sufficient.js',
+            debug       : true,
+            paths       : [ './node_modules', '../sources/javascript/sufficient.js','../sources/javascript/components']
+        } )
+        .transform( 'babelify', { presets: [ 'babel-preset-es2015' ].map( require.resolve ) } )
+
+    // Watch
+    bundler.plugin( watchify )
+
+    // Listen to bundler update
+    bundler.on( 'update', bundleSufficient )  
+
+    // Bundle
+    bundleSufficient()
+})
 /**
  * Scripts
  */
@@ -129,6 +200,7 @@ gulp.task( 'build-styles', function()
 gulp.task('build-images', function ()
 {
     return gulp.src(['./../sources/assets/images/*.png','./../sources/assets/images/*.jpg'])
+        .pipe(image())
         .pipe(gulp.dest('./../dist/assets/images'))
 })
 gulp.task('build-fonts', function ()
@@ -158,7 +230,9 @@ gulp.task( 'default', function()
 {
     // Scripts
     gulp.start( 'scripts' )
-
+    gulp.start( 'scripts-sufficient' )
+    gulp.start( 'scripts-collaborative' )
+    
     // Styles
     gulp.start( 'styles' )
     gulp.watch( '../sources/scss/**', [ 'styles' ] )

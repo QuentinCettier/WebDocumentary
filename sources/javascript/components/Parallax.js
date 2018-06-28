@@ -4,7 +4,6 @@ export default class Parallax
     {
         this.setItems()
     }
-
     setItems()
     {
         // Get elements

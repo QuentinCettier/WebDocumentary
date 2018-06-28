@@ -6,6 +6,8 @@
 @import 'partials/menu.scss';
 @import 'partials/home.scss';
 @import 'partials/intro.scss';
+@import 'partials/player.scss';
+@import 'partials/dataviz.scss';
 
 body
 {
@@ -27,7 +29,8 @@ body
     }
 }
 
-.calltoAction_click-container
+.calltoAction_click-container,
+.sufficient__calltoAction_click-container
 {
     opacity: 0;
     visibility: hidden;
@@ -44,7 +47,11 @@ body
         cursor: pointer;
     }
 }
-
+.sufficient__calltoAction_click-container
+{
+    opacity: 1;
+    visibility: visible;
+}
 .plus-icon
 {
     position: absolute;
@@ -53,7 +60,7 @@ body
     border: 2px solid white;
     border-radius: 100%;
     bottom : 5%;
-    right: 6.5%;
+    right: 13.5%;
     .plus-icon__line-1
     {
         position: absolute;
@@ -73,5 +80,39 @@ body
         top:50%;
         left: 50%;
         transform: translate(-50%,-50%);
+    }
+}
+
+.sound_container
+{
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border: 2px solid white;
+    border-radius: 100%;
+    bottom : 5%;
+    right: 6.5%;
+    
+    .sound_bar
+    {
+        position: absolute;
+        width: 3px;
+        height: 20px;
+        background: white;
+        top:25%;
+        transform: translate(-50%,-50%);
+        animation: equalizer-bar-boom 1s infinite backwards;
+        will-change: transform;
+    }
+    .sound_bar-1 { left: 25%;animation-delay: 0.2s;}
+    .sound_bar-2 { left: 50%;animation-delay: 0.7s;}
+    .sound_bar-3 { left: 75%;animation-delay: 0.4s;}
+
+
+    @keyframes equalizer-bar-boom
+    {
+        0% { transform: scaleY(0.1); }
+        10% { transform: scaleY(1); }
+        100% { transform: scaleY(0.1); }
     }
 }

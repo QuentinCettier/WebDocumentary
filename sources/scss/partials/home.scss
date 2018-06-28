@@ -1,6 +1,9 @@
-.home-container
+.home-container,
+.sufficient-container,
+.collaborative-container
 {
     @include center();
+    .sufficient-container_image,
     .home-container_image
     {
         position: absolute;
@@ -69,7 +72,11 @@
     left:50%;
     transform: translateX(-50%);
 }
-
+.sufficient_callToScroll-container
+{
+    opacity: 0;
+    visibility: hidden;
+}
 
 .home-intro-container
 {
@@ -103,6 +110,12 @@
     top: 100%;
 }
 .slider_image_4
+{
+    top: 100%;
+}
+
+.sufficient_image_2,
+.sufficient_image_3
 {
     top: 100%;
 }

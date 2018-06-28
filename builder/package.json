@@ -17,6 +17,7 @@
     "gulp-babel": "^6.1.2",
     "gulp-clean": "^0.3.2",
     "gulp-cssnano": "^2.1.2",
+    "gulp-image": "^4.3.0",
     "gulp-notify": "^2.2.0",
     "gulp-sourcemaps": "^1.9.1",
     "gulp-stylus": "^2.6.0",
