@@ -20,12 +20,15 @@ body
     right: 5%;
     z-index: 3;
     color : white;
-    font-family: RalewayBold;
+    font-family: RalewaySemiBold;
     font-size: 24px;
     transform: translate(-50%, -50%);
     &:hover
     {
         cursor: pointer;
+    }
+    @media screen and (max-width: 1280px){
+        font-size: 18px;
     }
 }
 
@@ -39,8 +42,8 @@ body
     left: 50%;
     z-index: 3;
     color : white;
-    font-family: RalewayBold;
-    font-size: 24px;
+    font-family: RalewaySemiBold;
+    font-size: 16px;
     transform: translateX(-50%);
     &:hover
     {
@@ -61,6 +64,11 @@ body
     border-radius: 100%;
     bottom : 5%;
     right: 13.5%;
+    @media screen and (max-width: 1280px){
+        width:34px;
+        height: 34px;
+        right: 11.5%;
+    }
     .plus-icon__line-1
     {
         position: absolute;
@@ -70,6 +78,9 @@ body
         top:50%;
         left: 50%;
         transform: translate(-50%,-50%);
+        @media screen and (max-width: 1280px){
+            width:20px;
+        }
     }
     .plus-icon__line-2
     {
@@ -80,6 +91,9 @@ body
         top:50%;
         left: 50%;
         transform: translate(-50%,-50%);
+        @media screen and (max-width: 1280px){
+            height:20px;
+        }
     }
 }
 
@@ -92,7 +106,10 @@ body
     border-radius: 100%;
     bottom : 5%;
     right: 6.5%;
-    
+    @media screen and (max-width: 1280px){
+        width:34px;
+        height: 34px;
+    }
     .sound_bar
     {
         position: absolute;
@@ -103,6 +120,10 @@ body
         transform: translate(-50%,-50%);
         animation: equalizer-bar-boom 1s infinite backwards;
         will-change: transform;
+        @media screen and (max-width: 1280px){
+            width:2px;
+            height: 15px;
+        }
     }
     .sound_bar-1 { left: 25%;animation-delay: 0.2s;}
     .sound_bar-2 { left: 50%;animation-delay: 0.7s;}
@@ -115,4 +136,11 @@ body
         10% { transform: scaleY(1); }
         100% { transform: scaleY(0.1); }
     }
+}
+
+
+.home__world-image
+{
+    width: 70%;
+    height: 70%;
 }

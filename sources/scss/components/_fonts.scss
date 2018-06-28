@@ -1,8 +1,23 @@
 @font-face {
     font-family: HelveticaNeueLight;
-    src: url('./../fonts/HelveticaNeue_Light.ttf');
+    src: url('./../fonts/HelveticaNeue-Light-08.ttf');
 }
-
+@font-face {
+    font-family: HelveticaNeueBold;
+    src: url('./../fonts/HelveticaNeue-Bold-02.ttf');
+}
+@font-face {
+    font-family: HelveticaNeueThin;
+    src: url('./../fonts/HelveticaNeue-Thin-13.ttf');
+}
+@font-face {
+    font-family: HelveticaNeue;
+    src: url('./../fonts/HelveticaNeue-01.ttf');
+}
+@font-face {
+    font-family: RalewayBlack;
+    src: url('./../fonts/Raleway-Black.ttf');
+}
 @font-face {
     font-family: RalewayBold;
     src: url('./../fonts/Raleway-Bold.ttf');
@@ -14,4 +29,12 @@
 @font-face {
     font-family: RalewayLight;
     src: url('./../fonts/Raleway-Light.ttf');
+}
+@font-face {
+    font-family: RalewayExtraLight;
+    src: url('./../fonts/Raleway-ExtraLight.ttf');
+}
+@font-face {
+    font-family: RalewayMedium;
+    src: url('./../fonts/Raleway-Medium.ttf');
 }

@@ -64,10 +64,11 @@
     top: 40%;
     left : 5%;
     transform: translateY(-50%);
-    font-family: RalewayBold;
-    font-size: 36px;
+    font-family: RalewaySemiBold;
+    font-size: 24px;
     letter-spacing: .6px;
     color: $white;
+    opacity: .8;
   }
   
   .player .description h3 {
@@ -75,10 +76,11 @@
     top: 65%;
     left : 5%;
     transform: translateY(-50%);
-    font-family: RalewayLight;
-    font-size: 24px;
+    font-family: RalewayExtraLight;
+    font-size: 16px;
     letter-spacing: .4px;
     color: $white;
+    opacity: .8;
   }
 
   .player_plus
@@ -92,23 +94,25 @@
       .player_plus_title
       {
         position: absolute;
-        top: 35%;
+        top: 25%;
         left: 5%;
-        font-family: RalewayBold;
-        font-size: 36px;
+        font-family: RalewayBlack;
+        font-size: 24px;
         letter-spacing: 2px;
         line-height: 42px;
         transform: translateY(-50%);
         color: $white;
+        border-bottom: 2px solid white;
       }
       .player_plus_text
       {
         position: absolute;
         width : 50%;
-        top: 50%;
+        top: 35%;
         left: 5%;
-        font-family: HelveticaNeueLight;
-        font-size: 16px;
+        font-family: HelveticaNeueThin;
+        font-weight: 300;
+        font-size: 14px;
         line-height: 23px;
         letter-spacing: .2px;
         color: $white;
@@ -119,7 +123,7 @@
         width : 40%;
         top: 85%;
         left: 5%;
-        font-family: HelveticaNeueLight;
+        font-family: RalewayMedium;
         font-size: 16px;
         line-height: 23px;
         letter-spacing: .2px;

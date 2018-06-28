@@ -2,7 +2,7 @@
 {
     position: absolute;
     width: 40%;
-    height: 35%;
+    height: 33%;
     top : 55%;
     left: 10%;
     transform: translateY(-50%);
@@ -13,8 +13,8 @@
         height: 10%;
         .intro-section__title-container__title
         {
-            font-family: RalewayLight;
-            font-size: 24px;
+            font-family: RalewayExtraLight;
+            font-size: 16px;
             letter-spacing: .4px;
             margin-bottom: 10px;
         }
@@ -29,6 +29,10 @@
             font-size: 42px;
             letter-spacing: .8px;
             line-height: 64px;
+            @media screen and (max-width : 1280px){
+                font-size: 32px;
+                line-height: 46px;
+            }
         }
     }
 }
@@ -88,7 +92,7 @@
     
     .intro_2_container__text-container__text
     {
-        font-size: 36px;
+        font-size: 32px;
         letter-spacing: .45px;
         line-height: 45px;
         text-align: center;
@@ -113,8 +117,8 @@
         font-family: HelveticaNeueLight;
         .title_conclusion__title
         {
-            font-size: 24px;
-            font-family: RalewayLight;
+            font-size: 16px;
+            font-family: RalewayExtraLight;
             position: absolute;
             top:0%;
             left:50%;
@@ -122,10 +126,12 @@
         }
         .title_conclusion__subtitle
         {
-            font-size: 36px;
+            font-size: 24px;
             font-family: RalewaySemiBold;
             position: absolute;
             top:5%;
+            width :70%;
+            text-align: center;
             left:50%;
             transform: translate(-50%,-50%);
         }
@@ -134,7 +140,7 @@
             position: absolute;
             top: 20%;
             font-family: HelveticaNeueLight;
-            font-size: 36px;
+            font-size: 32px;
             letter-spacing: .45px;
             line-height: 45px;
             text-align: center;
@@ -144,7 +150,7 @@
             position: absolute;
             top: 60%;
             font-family: HelveticaNeueLight;
-            font-size: 36px;
+            font-size: 32px;
             letter-spacing: .45px;
             line-height: 45px;
             text-align: center;
@@ -178,25 +184,39 @@
         left: 50%;
         transform: translate(-50%, -50%);
         color: $white;
+        @media screen and (max-width : 1280px){
+            width: 50%;
+        }
         .plus-intro-part__text-container__titre-1,
         .plus-intro-part__text-container__titre-2,
         .plus-intro-part__text-container__titre-3,
         .plus-intro-part__text-container__titre-4
         {
-            font-family: RalewaySemiBold;
+            font-family: HelveticaNeueBold;
             font-size: 16px;
             letter-spacing: .6px;
             line-height: 24px;
+            @media screen and (max-width : 1280px){
+                font-size: 14px;
+                line-height: 20px;
+            }
         }
         .plus-intro-part__text-container__text-1,
         .plus-intro-part__text-container__text-2,
         .plus-intro-part__text-container__text-3
         {
-            font-family: HelveticaNeueLight;
+            font-family: HelveticaNeue;
             font-size: 14px;
             letter-spacing: .6px;
             line-height: 24px;
             margin-bottom: 15%;
+            opacity: .8;
+            @media screen and (max-width : 1280px){
+                font-size: 12px;
+                line-height: 20px;
+                margin-bottom: 5%;
+            }
+
         }
     }
 
@@ -216,4 +236,11 @@
 {
     visibility: visible;
     opacity: 1;
+}
+
+.sufficient_1,
+.sufficient_2,
+.sufficient_3
+{
+    opacity: 0;
 }

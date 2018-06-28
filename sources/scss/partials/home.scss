@@ -48,7 +48,7 @@
     left:50%;
     transform: translateX(-50%);
     bottom : 5%;
-    font-family: RalewayBold;
+    font-family: RalewaySemiBold;
     font-size: 14px;
     z-index: 1;
 }
@@ -87,11 +87,17 @@
     bottom: 20%;
     color: white;
     left:50%;
-    font-family: HelveticaNeue;
+    font-family: HelveticaNeueLight;
     text-align: center;
-    line-height: 36px;
+    line-height: 32px;
     font-size: 24px;
     transform: translateX(-50%);
+    @media screen  and(max-width: 1280px){
+        font-size: 18px;
+        line-height: 24px;
+        width: 30%;
+        height: 8%;
+    }
 }
 
 

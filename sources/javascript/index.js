@@ -198,8 +198,8 @@ callToScrollContainer__text.addEventListener('click', () =>
         const tlSlide1Out = new TimelineMax({onComplete: switchSlide, onCompleteParams : [nextSlide, currentSlide]})
         tlSlide1Out
             .to(calltoAction_click_container, .3, {autoAlpha: 0, visibility: 'hidden'})
-            .to(intro_section__title_container__title, .5, {yPercent: -150, ease: Power1.easeIn})
-            .to(intro_section__text_container__text, .7, {yPercent: -130, ease: Power1.easeIn}, '-=.5')
+            .to(intro_section__title_container__title, .5, {yPercent: -160, ease: Power1.easeIn})
+            .to(intro_section__text_container__text, .7, {yPercent: -140, ease: Power1.easeIn}, '-=.5')
         
     }
     else if(countScroll == 2)
@@ -210,8 +210,8 @@ callToScrollContainer__text.addEventListener('click', () =>
         const tlSlide1Out = new TimelineMax({onComplete: switchSlide, onCompleteParams : [nextSlide, currentSlide]})
         tlSlide1Out
             .to(calltoAction_click_container, .3, {autoAlpha: 0, visibility: 'hidden'})
-            .to(intro_section__title_container__title, .5, {yPercent: -150, ease: Power1.easeIn})
-            .to(intro_section__text_container__text, .7, {yPercent: -130, ease: Power1.easeIn}, '-=.5')
+            .to(intro_section__title_container__title, .5, {yPercent: -160, ease: Power1.easeIn})
+            .to(intro_section__text_container__text, .7, {yPercent: -140, ease: Power1.easeIn}, '-=.5')
     }
     else if(countScroll == 3)
     {
@@ -221,8 +221,8 @@ callToScrollContainer__text.addEventListener('click', () =>
         const tlSlide1Out = new TimelineMax({onComplete: switchSlide, onCompleteParams : [nextSlide, currentSlide]})
         tlSlide1Out
             .to(calltoAction_click_container, .3, {autoAlpha: 0, visibility: 'hidden'})
-            .to(intro_section__title_container__title, .5, {yPercent: -150, ease: Power1.easeIn})
-            .to(intro_section__text_container__text, .7, {yPercent: -130, ease: Power1.easeIn}, '-=.5')
+            .to(intro_section__title_container__title, .5, {yPercent: -160, ease: Power1.easeIn})
+            .to(intro_section__text_container__text, .7, {yPercent: -140, ease: Power1.easeIn}, '-=.5')
     }
 
 })

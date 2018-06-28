@@ -167,7 +167,7 @@ calltoAction_click.addEventListener('click', () =>
             .fromTo(intro_2_container, 1, {yPercent: -100},{yPercent: -200, ease: Expo.easeInOut},'-=.3')
             .fromTo(collaborative_image_2,1, {yPercent: 0},{yPercent: -100, ease: Expo.easeInOut},'-=1')
             .fromTo(intro_section__text_container__text, 2.5,{yPercent: 150}, {yPercent: 0, ease:Expo.easeInOut})
-            .fromTo(intro_section__title_container__title, 1.4, {yPercent: 150},{yPercent: 0, ease:Expo.easeInOut}, '-=1.5')
+            .fromTo(intro_section__title_container__title, 1.4, {yPercent: 170},{yPercent: 0, ease:Expo.easeInOut}, '-=1.8')
             click_count++
     }
     else if (click_count == 2)
@@ -193,6 +193,7 @@ calltoAction_click.addEventListener('click', () =>
             .fromTo(player, 1, {yPercent: -100},{yPercent: -200, ease: Expo.easeInOut},'-=.3')
             .fromTo(conclusion_container,1, {yPercent: 0},{yPercent: -100, ease: Expo.easeInOut},'-=1')
             .to([intro_2_text_1, intro_2_text_2], .3, {autoAlpha:0}, '+=3')
+            .to(intro_2_text_2, .1, {yPercent: -50})
         click_count++
 
     }

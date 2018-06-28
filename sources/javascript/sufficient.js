@@ -34,6 +34,10 @@ const sound_bar_1 = document.querySelector('.sound_bar-1')
 const sound_bar_2 = document.querySelector('.sound_bar-2')
 const sound_bar_3 = document.querySelector('.sound_bar-3')
 
+const sufficient_1 = document.querySelector('.sufficient_1')
+const sufficient_2 = document.querySelector('.sufficient_2')
+const sufficient_3 = document.querySelector('.sufficient_3')
+console.log(sufficient_1)
 
 const sufficient_image_1 = document.querySelector('.sufficient_image_1')
 const sufficient_image_2 = document.querySelector('.sufficient_image_2')
@@ -65,6 +69,9 @@ TweenLite.set(
     intro_2_text_1,
     intro_2_text_2,
     intro_2_text_3,
+    sufficient_1,
+    sufficient_2,
+    sufficient_3,
     plus_icon,
     menu_title_1,
     menu_title_2,
@@ -136,11 +143,11 @@ calltoAction_click.addEventListener('click', () =>
             .to([sound_bar_1,sound_bar_2,sound_bar_3], .3, {background: '#000'}, '-=.3')
             .fromTo(sufficient_image_1, 1, {yPercent: 0},{yPercent: -100, ease: Expo.easeInOut},'-=.3')
             .fromTo(intro_2_container,1, {yPercent: 0},{yPercent: -100, ease: Expo.easeInOut},'-=1')
-            .to(intro_2_text_1, .8, {autoAlpha: 1, ease: Power1.easeIn})
-            .to(intro_2_text_1, .8, {autoAlpha: 0, ease: Power1.easeIn}, '+=.5')
-            .to(intro_2_text_2, .8, {autoAlpha: 1, ease: Power1.easeIn})
-            .to(intro_2_text_2, .8, {autoAlpha: 0, ease: Power1.easeIn}, '+=.5')
-            .to(intro_2_text_3, .8, {autoAlpha: 1, ease: Power1.easeIn})
+            .to(sufficient_1, .8, {autoAlpha: 1, ease: Power1.easeIn})
+            .to(sufficient_1, .8, {autoAlpha: 0, ease: Power1.easeIn}, '+=.5')
+            .to(sufficient_2, .8, {autoAlpha: 1, ease: Power1.easeIn})
+            .to(sufficient_2, .8, {autoAlpha: 0, ease: Power1.easeIn}, '+=.5')
+            .to(sufficient_3, .8, {autoAlpha: 1, ease: Power1.easeIn})
             .to(calltoAction_click, .8, {autoAlpha: 1, ease: Power1.easeIn},'-=2')
         click_count++
     }
